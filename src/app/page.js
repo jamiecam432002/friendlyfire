@@ -22,7 +22,7 @@ export default async function Home(props) {
   );
   return (
     <main className="main__home">
-      <h1>Titties!</h1>
+      
       <RestaurantListings
         initialRestaurants={restaurants}
         searchParams={searchParams}
