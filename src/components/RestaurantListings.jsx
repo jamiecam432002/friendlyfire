@@ -13,15 +13,15 @@ import Filters from "@/src/components/Filters.jsx";
 const RestaurantItem = ({ restaurant }) => (
   <li key={restaurant.id}>
     <Link href={`/restaurant/${restaurant.id}`}>
-      <ActiveResturant restaurant={restaurant} />
+      <ActiveRestaurant restaurant={restaurant} />
     </Link>
   </li>
 );
 
-const ActiveResturant = ({ restaurant }) => (
+const ActiveRestaurant = ({ restaurant }) => (
   <div>
     <ImageCover photo={restaurant.photo} name={restaurant.name} />
-    <ResturantDetails restaurant={restaurant} />
+    <RestaurantDetails restaurant={restaurant} />
   </div>
 );
 
@@ -31,7 +31,7 @@ const ImageCover = ({ photo, name }) => (
   </div>
 );
 
-const ResturantDetails = ({ restaurant }) => (
+const RestaurantDetails = ({ restaurant }) => (
   <div className="restaurant__details">
     <h2>{restaurant.name}</h2>
     <RestaurantRating restaurant={restaurant} />
