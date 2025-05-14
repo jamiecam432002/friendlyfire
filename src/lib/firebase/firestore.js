@@ -71,10 +71,11 @@ export async function addReviewToRestaurant(db, restaurantId, review) {
       updateWithRating(transaction, docRef, newRatingDocument, review)
     );
   } catch (error) {
-    console.error(
+    console.log(error.digest);
+    /* console.error(
       "There was an error adding the rating to the restaurant",
       error
-    );
+    ); */
     throw error;
   }
 }
