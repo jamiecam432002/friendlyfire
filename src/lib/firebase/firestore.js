@@ -46,10 +46,10 @@ const updateWithRating = async (
     avgRating: newAverage,
   });
 
-  /*transaction.set(newRatingDocument, {
+  transaction.set(newRatingDocument, {
     ...review,
     timestamp: Timestamp.fromDate(new Date()),
-  });*/
+  });
 };
 
 export async function addReviewToRestaurant(db, restaurantId, review) {
@@ -67,6 +67,7 @@ export async function addReviewToRestaurant(db, restaurantId, review) {
       collection(db, `restaurants/${restaurantId}/ratings`)
     );
 
+    // corrected line
     await runTransaction(db, (transaction) =>
       updateWithRating(transaction, docRef, newRatingDocument, review)
     );
