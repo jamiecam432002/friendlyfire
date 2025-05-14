@@ -46,10 +46,10 @@ const updateWithRating = async (
     avgRating: newAverage,
   });
 
-  transaction.set(newRatingDocument, {
+  /*transaction.set(newRatingDocument, {
     ...review,
     timestamp: Timestamp.fromDate(new Date()),
-  });
+  });*/
 };
 
 export async function addReviewToRestaurant(db, restaurantId, review) {
@@ -71,11 +71,10 @@ export async function addReviewToRestaurant(db, restaurantId, review) {
       updateWithRating(transaction, docRef, newRatingDocument, review)
     );
   } catch (error) {
-    console.log(error.digest);
-    /* console.error(
+    console.error(
       "There was an error adding the rating to the restaurant",
       error
-    ); */
+    );
     throw error;
   }
 }
