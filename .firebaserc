@@ -1,6 +1,7 @@
 {
   "projects": {
-    "friendlyeats-codelab": "friendlyfire-e8a94"
+    "friendlyeats-codelab": "friendlyfire-e8a94",
+    "default": "friendlyfire-e8a94"
   },
   "targets": {},
   "etags": {}

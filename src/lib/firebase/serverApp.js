@@ -11,8 +11,18 @@ import { getAuth } from "firebase/auth";
 // and Static Site Generation
 export async function getAuthenticatedAppForUser() {
   const authIdToken = (await cookies()).get("__session")?.value;
+  const firebaseConfig = {
+    apiKey: "AIzaSyAHqBFSc3aRC2zV-Vo3DGHw7BdL23FrbGo",
+    authDomain: "friendlyfire-e8a94.firebaseapp.com",
+    projectId: "friendlyfire-e8a94",
+    storageBucket: "friendlyfire-e8a94.firebasestorage.app",
+    messagingSenderId: "695407578953",
+    appId: "1:695407578953:web:185979cfd9cc2db6ee1498",
+  };
 
-  const firebaseServerApp = initializeServerApp(initializeApp(), { authIdToken });
+  const firebaseServerApp = initializeServerApp(initializeApp(firebaseConfig), {
+    authIdToken,
+  });
 
   const auth = getAuth(firebaseServerApp);
   await auth.authStateReady();
