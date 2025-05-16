@@ -15,7 +15,7 @@ export async function GeminiSummary({ restaurantId }) {
   const prompt = `
     Based on the following restaurant reviews, 
     where each review is separated by a '${reviewSeparator}' character, 
-    create a one-sentence summary of what people think of the restaurant. 
+    create a three-sentence summary of what people think of the restaurant. 
 
     Here are the reviews: ${reviews.map((review) => review.text).join(reviewSeparator)}
   `;
